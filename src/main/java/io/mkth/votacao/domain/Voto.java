@@ -10,6 +10,10 @@ public class Voto {
     private String idUsuario;
     private String meuVoto;
 
+    public Voto() {
+
+    }
+
     public Voto(String id, String idEvento, List<String> candidatos, String idUsuario, String meuVoto) {
         this.id = id;
         this.idEvento = idEvento;
@@ -56,5 +60,16 @@ public class Voto {
 
     public void setMeuVoto(String meuVoto) {
         this.meuVoto = meuVoto;
+    }
+
+    @Override
+    public String toString() {
+        return "Voto{" +
+                "id='" + id + '\'' +
+                ", idEvento='" + idEvento + '\'' +
+                ", candidatos=" + candidatos +
+                ", idUsuario='" + idUsuario + '\'' +
+                ", meuVoto='" + meuVoto + '\'' +
+                '}';
     }
 }

@@ -1,5 +1,6 @@
 package io.mkth.votacao;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpServer;
 import io.mkth.votacao.infra.HandlerHTTP;
 import io.mkth.votacao.infra.ServerHTTP;
@@ -18,8 +19,10 @@ public class main {
         ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
 
         ProcessVotation processVotation = new ProcessVotation();
-        HandlerHTTP myHandler = new HandlerHTTP(processVotation);
+        ObjectMapper mapper = new ObjectMapper();
+        HandlerHTTP myHandler = new HandlerHTTP(processVotation, mapper);
 
+        server.createContext("/username", myHandler);
         server.createContext("/test", myHandler);
         server.setExecutor(threadPoolExecutor);
         server.start();
