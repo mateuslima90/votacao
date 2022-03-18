@@ -1,4 +1,4 @@
-package io.mkth.votacao.infra;
+package io.mkth.votacao.infra.http;
 
 import com.sun.net.httpserver.HttpServer;
 

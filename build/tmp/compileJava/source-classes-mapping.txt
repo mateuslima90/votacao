@@ -1,8 +1,16 @@
-io/mkth/votacao/infra/ServerHTTP.java
- io.mkth.votacao.infra.ServerHTTP
-io/mkth/votacao/model/Voto.java
- io.mkth.votacao.model.Voto
-io/mkth/votacao/infra/HandlerHTTP.java
- io.mkth.votacao.infra.HandlerHTTP
+io/mkth/votacao/infra/http/ServerHTTP.java
+ io.mkth.votacao.infra.http.ServerHTTP
+io/mkth/votacao/domain/ResultadoVoto.java
+ io.mkth.votacao.domain.ResultadoVoto
+io/mkth/votacao/domain/Voto.java
+ io.mkth.votacao.domain.Voto
+io/mkth/votacao/infra/repository/VotoRepositoryInterface.java
+ io.mkth.votacao.infra.repository.VotoRepositoryInterface
+io/mkth/votacao/usecases/ProcessVotation.java
+ io.mkth.votacao.usecases.ProcessVotation
+io/mkth/votacao/infra/http/HandlerHTTP.java
+ io.mkth.votacao.infra.http.HandlerHTTP
+io/mkth/votacao/infra/repository/VotoFileRepository.java
+ io.mkth.votacao.infra.repository.VotoFileRepository
 io/mkth/votacao/main.java
  io.mkth.votacao.main

@@ -2,8 +2,9 @@ package io.mkth.votacao;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpServer;
-import io.mkth.votacao.infra.HandlerHTTP;
-import io.mkth.votacao.infra.ServerHTTP;
+import io.mkth.votacao.infra.http.HandlerHTTP;
+import io.mkth.votacao.infra.http.ServerHTTP;
+import io.mkth.votacao.infra.repository.VotoFileRepository;
 import io.mkth.votacao.usecases.ProcessVotation;
 
 import java.util.concurrent.Executors;
@@ -20,10 +21,10 @@ public class main {
 
         ProcessVotation processVotation = new ProcessVotation();
         ObjectMapper mapper = new ObjectMapper();
-        HandlerHTTP myHandler = new HandlerHTTP(processVotation, mapper);
+        VotoFileRepository repository = new VotoFileRepository();
+        HandlerHTTP myHandler = new HandlerHTTP(processVotation, repository, mapper);
 
-        server.createContext("/username", myHandler);
-        server.createContext("/test", myHandler);
+        server.createContext("/votos", myHandler);
         server.setExecutor(threadPoolExecutor);
         server.start();
         System.out.println(" Server started on port 8001");
